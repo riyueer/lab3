@@ -28,13 +28,13 @@ three.js 是一个 WebGL 库，对 WebGL API 进行了很好的封装。它库�
 
 有两种方法使用three.js
 
-* [下载](https://github.com/mrdoob/three.js/blob/dev/build/three.min.js)three.min.js并将他包含在你使用的html文件中。
+* [下载](https://github.com/mrdoob/three.js/blob/dev/build/three.min.js) three.min.js并将他包含在你使用的html文件中。
 
   ```javascript
   <script src="js/three.min.js"></script>
   ```
 
-* 使用npm安装three.js的[module](https://threejs.org/docs/index.html#manual/en/buildTools/Testing-with-NPM)并导入到你的项目中
+* 使用npm安装three.js的 [module](https://threejs.org/docs/index.html#manual/en/buildTools/Testing-with-NPM) 并导入到你的项目中
 
   * npm 安装three模块
 
@@ -108,7 +108,7 @@ renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 document.body.appendChild(renderer.domElement);
 ```
 
-抗锯齿 `antialias` 是创建 WebGLRenderer 时的一个可选参数，更多可选参数可以查[这里](https://threejs.org/docs/index.html#api/en/renderers/WebGLRenderer)。在学习 Three.js 时勤看文档是一个好习惯。
+抗锯齿 `antialias` 是创建 WebGLRenderer 时的一个可选参数，更多可选参数可以查[这里](https://threejs.org/docs/index.html#api/en/renderers/WebGLRenderer) 。在学习 Three.js 时勤看文档是一个好习惯。
 
 然后我们需要创建渲染回调函数。requestAnimationFrame 是浏览器提供的 JavaScript API，传递回调函数为参数。
 
@@ -151,7 +151,7 @@ scene.add( light );
 
 #### 2. 材质（Material）
 
-* Material 对象定义了物体的材质，包括颜色、透明度、材质等等。Three.js 提供了一些预设材质，如 MeshBasicMaterial ，MeshPhongMaterial，MeshLambertMaterial 等，具体的 Material 参数与预设材质的定义请参考[文档](https://threejs.org/docs/index.html#api/en/materials/Material)。
+* Material 对象定义了物体的材质，包括颜色、透明度、材质等等。Three.js 提供了一些预设材质，如 MeshBasicMaterial ，MeshPhongMaterial，MeshLambertMaterial 等，具体的 Material 参数与预设材质的定义请参考[文档](https://threejs.org/docs/index.html#api/en/materials/Material) 。
 
 #### 3. 贴图（Texture）
 
@@ -227,7 +227,7 @@ textureLoader.load("./assets/textures/floor/FloorsCheckerboard_S_Diffuse.jpg", f
 
 在js文件夹中，添加FirstPersonControls.js，创建FirstPersonControls类
 
-> 注：这里的FirstPersonControls.js与threejs官方demo下的[FirstPersonControl](<https://github.com/mrdoob/three.js/blob/master/examples/js/controls/FirstPersonControls.js>)是有一定的区别的，学习官方demo的同学注意下这点。这里实现的功能类似于官网上[跳箱子](https://threejs.org/examples/#misc_controls_pointerlock)的demo，对于这一demo同学们可以参考源码[PointerLockControls.js](https://github.com/mrdoob/three.js/blob/master/examples/js/controls/PointerLockControls.js)和[misc_controls_pointerlock.html](https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_pointerlock.html)
+> 注：这里的FirstPersonControls.js与threejs官方demo下的[FirstPersonControl](<https://github.com/mrdoob/three.js/blob/master/examples/js/controls/FirstPersonControls.js>) 是有一定的区别的，学习官方demo的同学注意下这点。这里实现的功能类似于官网上[跳箱子](https://threejs.org/examples/#misc_controls_pointerlock) 的demo，对于这一demo同学们可以参考源码[PointerLockControls.js](https://github.com/mrdoob/three.js/blob/master/examples/js/controls/PointerLockControls.js) 和 [misc_controls_pointerlock.html](https://github.com/mrdoob/three.js/blob/master/examples/misc_controls_pointerlock.html) 
 
 ```javascript
 class FirstPersonControls {
@@ -244,7 +244,7 @@ class FirstPersonControls {
 
 当我们想要控制相机时，我们调用dom元素的requestPointerLock方法进行鼠标光标的锁定，并为document的pointerlockchange事件做监听，来进入和退出控制状态。为pointerlockerror事件做监听，来判断浏览器能否使用该API
 
-> 注：有关pointer lock相关的api，可以参考[这篇文档](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API)进行学习
+> 注：有关pointer lock相关的api，可以参考[这篇文档](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_Lock_API) 进行学习
 
 ```javascript
 class FirstPersonControls  {
@@ -439,7 +439,7 @@ function render() {
 }
 ```
 
-> 注：这里我们通过[THREE.Clock对象](https://threejs.org/docs/index.html#api/en/core/Clock)来计算delta，还有很多其他的方法，请同学们自行研究
+> 注：这里我们通过[THREE.Clock对象](https://threejs.org/docs/index.html#api/en/core/Clock) 来计算delta，还有很多其他的方法，请同学们自行研究
 
 #### 4. 碰撞检测（可选）
 
@@ -453,8 +453,8 @@ function render() {
 
 碰撞检测可以有以下几种思路实现
 
-* 通过[Raycaster](https://threejs.org/docs/index.html#api/en/core/Raycaster)，向模型顶点发出规定长度射线来判断相交并做相应的处理。
-* 通过引入物理引擎，如[physijs](http://chandlerprall.github.io/Physijs/)。threejs的[car_demo](https://threejs.org/examples/#webgl_materials_cars)就是用physijs实现的
+* 通过[Raycaster](https://threejs.org/docs/index.html#api/en/core/Raycaster) ，向模型顶点发出规定长度射线来判断相交并做相应的处理。
+* 通过引入物理引擎，如[physijs](http://chandlerprall.github.io/Physijs/) 。threejs的[car_demo](https://threejs.org/examples/#webgl_materials_cars) 就是用physijs实现的
 
 同学们可以根据自己project的需要，来学习本部分，本次lab对碰撞检测不作要求。
 
@@ -549,7 +549,7 @@ socket.io 是一个面向实时web应用的javascript库，他有两个部分：
 
 * 完成Part1的部分，实现一个离线的漫游场景，还未完成的同学建议先完成Part1部分。
 * 了解websocket协议，观察一些诸如聊天室的demo的工作原理，了解使用websocket能做什么。
-* [socket.io](https://socket.io/)作为一个使用websocket协议的javascript库，了解socket.io在应用中是如何在客户端与服务端建立通信的。
+* [socket.io](https://socket.io/) 作为一个使用websocket协议的javascript库，了解socket.io在应用中是如何在客户端与服务端建立通信的。
 
 ### 准备工作
 
@@ -559,12 +559,12 @@ socket.io 是一个面向实时web应用的javascript库，他有两个部分：
 
 * 安装nodejs, npm工具，有以下两种安装方式
 
-  * 前往[官网](https://nodejs.org/)下载安装
-  * 使用[nvm](https://github.com/creationix/nvm)版本管理工具安装
+  * 前往[官网](https://nodejs.org)下载安装
+  * 使用[nvm](https://github.com/creationix/nvm) 版本管理工具安装
 
   > 注：安装完成后检查nodejs和npm是否是最新版本
 
-* 我们使用[express](https://expressjs.com/)框架与[socket.io](https://socket.io/)框架，使用npm安装express包与socket.io包
+* 我们使用[express](https://expressjs.com)框架与[socket.io](https://socket.io)框架，使用npm安装express包与socket.io包
 
   ```shell
   mkdir server
@@ -711,7 +711,7 @@ client dfHU9jpSSl6d4DEgAAAB disconnected
 
   首先要在index.html中建立一个新的Map（该Map将其他客户端的socket.id映射到他们的模型上），来判断服务器发来的需要更新位置信息的客户端是否在场景中，如果没有在场景中，则需要为该客户新建一个模型，并把他加入到Map中，如果已经在场景中了，那只需要更新用户对应的模型的位置和旋转信息即可。
 
-  首先，我们下载[GLTFLoader.js](https://github.com/mrdoob/three.js/blob/master/examples/js/loaders/GLTFLoader.js)到js文件夹里，并在index.html导入
+  首先，我们下载[GLTFLoader.js](https://github.com/mrdoob/three.js/blob/master/examples/js/loaders/GLTFLoader.js) 到js文件夹里，并在index.html导入
 
   ```html
   <script src="js/GLTFLoader.js"></script>

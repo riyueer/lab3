@@ -155,11 +155,13 @@ class FirstPersonControls  {
         this.moveRight = false;
     }
 
+    //鼠标点击时切换控制状态
     onPointerlockChange() {
         console.log(this.domElement);
         this.isLocked = document.pointerLockElement === this.domElement;
     }
 
+    //判断浏览器是否能使用该API
     onPointerlockError() {
         console.error( 'THREE.PointerLockControls: Unable to use Pointer Lock API' );
     }
@@ -173,8 +175,9 @@ class FirstPersonControls  {
             this.yawObject.rotation.y -= movementX * 0.002;
             // this.pitchObject.rotation.y -= movementX * 0.002;//这样写地板也会跟着旋转，我们想要的效果是只对填空选择，地板是不变的
             this.pitchObject.rotation.x -= movementY * 0.002;
-						// 这一步的目的是什么
-                        //注释取消这一步，垂直移动效果不好
+            // 这一步的目的是什么。
+            // 若删去这一步，则相机在水平轴上可以无线旋转，产生“空翻”的效果（鼠标一直向上或向下），影响实际体验。
+            // 注释取消这一步，垂直移动效果不好
             // this.pitchObject.rotation.x = Math.max( - Math.PI / 2, Math.min( Math.PI / 2, this.pitchObject.rotation.x ) );
         }
     }
@@ -225,6 +228,8 @@ class FirstPersonControls  {
       	// 思考函数后面为什么要加bind(this)
         //bind()方法主要是将函数绑定到某个对象，bind()会创建一个函数，函数体内的this对象的值会被绑定到传入bind()中的第一个参数的值
         //例如，f.bind(obj)，实际上可以理解为obj.f()，这时f函数体内的this自然指向的是obj；
+        //不设置bind时，默认情况下，事件处理函数内的this指向的是addEventListener的对象，产生事件的对象（即document）。
+        //设置bind后，this会指向被bind的对象，即FirstPersonControls对象。
         document.addEventListener( 'pointerlockchange', this.onPointerlockChange.bind(this), false );
         document.addEventListener( 'pointerlockerror', this.onPointerlockError.bind(this), false );
         document.addEventListener( 'mousemove', this.onMouseMove.bind(this), false);
